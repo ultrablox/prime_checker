@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:prime_checker.xcodeproj">
+      location = "self:prime_checker2.xcodeproj">
    </FileRef>
 </Workspace>

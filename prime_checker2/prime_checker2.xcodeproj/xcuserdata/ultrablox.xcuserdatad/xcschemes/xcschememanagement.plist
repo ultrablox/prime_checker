@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>prime_checker.xcscheme</key>
+		<key>prime_checker2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>16B329251C56048A00C54438</key>
+		<key>16A2957C1C56B4F900DCD65D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

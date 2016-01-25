@@ -27,7 +27,10 @@ public:
         //= pow(2, p) - 1;
         
         for(unsigned i = 0; i < p - 2; ++i)
+        {
+            std::cout << "Progress " << 100.0f * float(i) / (p-2) << '\%' << std::endl;
             s = ((s * s) - 2) % M;
+        }
         
         return (s == 0);
     }
@@ -45,11 +48,10 @@ void check_prime(const std::string & num)
     //mersenne_checker<unsigned> checker;
     mersenne_checker<big_uint> checker;
     
-    std::cout << num;
     if(checker.check_lucas_lehmer(power_val))
-        std::cout << " is prime" << std::endl;
+        std::cout << num << " is prime" << std::endl;
     else
-        std::cout << " is not prime" << std::endl;
+        std::cout << num <<" is not prime" << std::endl;
 }
 
 void run_test(const char * file_name, unsigned line, bool val)

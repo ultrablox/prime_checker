@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16B329251C56048A00C54438"
-               BuildableName = "prime_checker"
-               BlueprintName = "prime_checker"
-               ReferencedContainer = "container:prime_checker.xcodeproj">
+               BlueprintIdentifier = "16A2957C1C56B4F900DCD65D"
+               BuildableName = "prime_checker2"
+               BlueprintName = "prime_checker2"
+               ReferencedContainer = "container:prime_checker2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16B329251C56048A00C54438"
-            BuildableName = "prime_checker"
-            BlueprintName = "prime_checker"
-            ReferencedContainer = "container:prime_checker.xcodeproj">
+            BlueprintIdentifier = "16A2957C1C56B4F900DCD65D"
+            BuildableName = "prime_checker2"
+            BlueprintName = "prime_checker2"
+            ReferencedContainer = "container:prime_checker2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16B329251C56048A00C54438"
-            BuildableName = "prime_checker"
-            BlueprintName = "prime_checker"
-            ReferencedContainer = "container:prime_checker.xcodeproj">
+            BlueprintIdentifier = "16A2957C1C56B4F900DCD65D"
+            BuildableName = "prime_checker2"
+            BlueprintName = "prime_checker2"
+            ReferencedContainer = "container:prime_checker2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16B329251C56048A00C54438"
-            BuildableName = "prime_checker"
-            BlueprintName = "prime_checker"
-            ReferencedContainer = "container:prime_checker.xcodeproj">
+            BlueprintIdentifier = "16A2957C1C56B4F900DCD65D"
+            BuildableName = "prime_checker2"
+            BlueprintName = "prime_checker2"
+            ReferencedContainer = "container:prime_checker2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
