@@ -69,6 +69,7 @@ public:
         mod = *this;
         unsigned divisor_digit_count = divisor.data.size();
         big_uint mult;
+        unsigned digits_offset = 0;
         while(mod >= divisor)
         {
             //Check if we need additional digit offset
@@ -80,6 +81,8 @@ public:
                 tmp.data.clear();
                 tmp.data.insert(tmp.data.end(), mod.data.begin() + mod.data.size() - 1 - divisor_digit_count, mod.data.end());
             }
+            
+            digits_offset = mod.data.size() - tmp.data.size();
             
             unsigned d = std::numeric_limits<byte_t>::max();
             for(; d > 0; --d)
@@ -93,7 +96,7 @@ public:
             assert(d > 0);
             assert(mod >= mult);
             res.data.insert(res.data.begin(), d);
-            mod = mod - mult;
+            mod = mod - (mult << (digits_offset * sizeof(byte_t) * 8));
         }
     }
     

@@ -156,7 +156,7 @@ int main(int argc, const char * argv[])
     check_prime("2^74207280-1");
     
     
-    check_prime("2^13-1");*/
+    check_prime("2^500-1");*/
     
     if(argc < 2)
         return 1;
