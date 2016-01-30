@@ -9,32 +9,7 @@
 #include <iostream>
 #include <math.h>
 #include "big_int.h"
-
-template<typename T>
-class mersenne_checker
-{
-    using uint_t = T;
-public:
-    bool check_lucas_lehmer(unsigned p)
-    {
-        if(p == 2)
-            return true;
-        
-        uint_t s(4);
-        
-        uint_t M(1);
-        M = (M << p) - 1;
-        //= pow(2, p) - 1;
-        
-        for(unsigned i = 0; i < p - 2; ++i)
-        {
-            std::cout << "Progress " << 100.0f * float(i) / (p-2) << '\%' << std::endl;
-            s = ((s * s) - 2) % M;
-        }
-        
-        return (s == 0);
-    }
-};
+#include "primes.h"
 
 void check_prime(const std::string & num)
 {
@@ -155,8 +130,8 @@ int main(int argc, const char * argv[])
     check_prime("2^500-1");
     check_prime("2^74207280-1");
     
-    
-    check_prime("2^500-1");*/
+    */
+    check_prime("2^500-1");
     
     if(argc < 2)
         return 1;

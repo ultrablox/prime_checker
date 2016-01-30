@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <assert.h>
 #include <iomanip>
+#include <string>
 
 //template<typename T = unsigned char>
 class big_uint
@@ -66,6 +67,8 @@ public:
     {
 //        std::cout << "divide " << *this << '/' << divisor << std::endl;
         
+		res.data.clear();
+
         mod = *this;
         unsigned divisor_digit_count = divisor.data.size();
         big_uint mult;
@@ -200,6 +203,14 @@ public:
     friend big_uint operator<<(const big_uint & val, unsigned offset)
     {
         big_uint res(val);
+
+		unsigned zero_digit_count = offset / (sizeof(byte_t) * 8);
+		{
+			std::vector<byte_t> tmp(zero_digit_count, 0);
+			res.data.insert(res.data.begin(), tmp.begin(), tmp.end());
+		}
+
+		offset = offset % (sizeof(byte_t) * 8);
         
         while(offset--)
         {
@@ -238,6 +249,11 @@ public:
     {
         return lhs.data == rhs.data;
     }
+
+	friend bool operator!=(const big_uint & lhs, const big_uint & rhs)
+	{
+		return !(lhs == rhs);
+	}
     
     friend bool operator>=(const big_uint & lhs, const big_uint & rhs)
     {
@@ -271,11 +287,40 @@ public:
     
     friend std::ostream & operator<<(std::ostream & os, const big_uint & val)
     {
-        for(unsigned i = 0; i < val.data.size(); ++i)
-            os << std::hex << (unsigned)val.data[val.data.size() - 1 - i];
-        
+        /*for(unsigned i = 0; i < val.data.size(); ++i)
+			os << std::hex << (unsigned)val.data[val.data.size() - 1 - i] << std::dec;*/
+
+		std::string dec_num;
+
+		big_uint ten(10);
+		big_uint res(val), cur_res, cur_mod;
+
+		while (res > 0)
+		{
+			res.divide(ten, cur_res, cur_mod);
+			std::string dec_digit = std::to_string(cur_mod.data[0]);
+			dec_num.push_back(dec_digit[0]);
+			res = cur_res;
+		}
+
+		std::reverse(dec_num.begin(), dec_num.end());
+		os << dec_num;
         return os;
     }
+
+	static big_uint as_mersenne(const std::string & num)
+	{
+		std::size_t power_pos = num.find('^');
+		std::size_t minus_pos = num.find('-');
+
+		std::string power_strval = num.substr(power_pos + 1, minus_pos - power_pos - 1);
+
+		long long power_val = atoll(power_strval.c_str());
+
+		big_uint res(1);
+		res = (res << power_val) - 1;
+		return res;
+	}
 public:
     std::vector<byte_t> data;
     
